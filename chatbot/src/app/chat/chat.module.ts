@@ -4,11 +4,13 @@ import { ChatDialogComponent } from './chat-dialog/chat-dialog.component';
 import { ChatService } from './chat.service';
 
 import { FormsModule } from "@angular/forms";
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   declarations: [
     ChatDialogComponent

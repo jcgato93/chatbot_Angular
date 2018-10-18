@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { ChatModule } from "./chat/chat.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,9 @@ import { ChatModule } from "./chat/chat.module";
   ],
   imports: [
     BrowserModule,
-    ChatModule
+    ChatModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

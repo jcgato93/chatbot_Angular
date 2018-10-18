@@ -20,14 +20,27 @@ export class ChatDialogComponent implements OnInit {
 
   ngOnInit() {
     // appends to array after each new message is added to feedSource
-    this.messages = this.chat.conversation.asObservable ().pipe (scan ((acc, val) => acc.concat (val)))
-   
+    this.messages = this.chat.conversation.asObservable().pipe(scan((acc, val) => acc.concat(val)))  
+
+    this.messages.subscribe(next=>{
+      setTimeout(() => {
+        this.focusBottomContent();  
+      }, 800);
+      
+    })
   }
 
 
   sendMessage(){
-    this.chat.converse(this.formValue);
-    this.formValue = '';
+    this.chat.converse(this.formValue)
+    this.formValue = '';     
+  }
+
+
+  focusBottomContent(){
+    let messageContent= document.querySelector(".content-conversation");
+    console.log(messageContent);   
+    messageContent.scrollTop = messageContent.scrollHeight;
   }
 
 }
